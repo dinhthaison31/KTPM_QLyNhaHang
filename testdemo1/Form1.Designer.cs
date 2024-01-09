@@ -87,6 +87,7 @@
             // 
             // btn_testbooking
             // 
+            this.btn_testbooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_testbooking.Location = new System.Drawing.Point(52, 309);
             this.btn_testbooking.Name = "btn_testbooking";
             this.btn_testbooking.Size = new System.Drawing.Size(205, 56);
@@ -97,6 +98,7 @@
             // 
             // btn_testfoodorder
             // 
+            this.btn_testfoodorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_testfoodorder.Location = new System.Drawing.Point(52, 246);
             this.btn_testfoodorder.Name = "btn_testfoodorder";
             this.btn_testfoodorder.Size = new System.Drawing.Size(205, 57);
