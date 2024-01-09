@@ -38,7 +38,7 @@ namespace testdemo1
                 usernameField.SendKeys("user1@socialloft.com");
 
                 IWebElement passwordField = driver.FindElement(By.Id("login_password")); // Thay thế bằng id hoặc selector của trường mật khẩu
-                passwordField.SendKeys("");
+                passwordField.SendKeys("654321");
 
                 //Đóng màn hình đen khi chạy chương trình
                 ChromeDriverService chrome = ChromeDriverService.CreateDefaultService();
@@ -93,6 +93,11 @@ namespace testdemo1
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+            finally
+            {
+                // Đóng trình duyệt sau khi hoàn thành
+                driver.Quit();
             }
         }
     }
