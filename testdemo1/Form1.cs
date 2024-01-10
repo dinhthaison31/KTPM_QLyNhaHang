@@ -30,17 +30,17 @@ namespace testdemo1
             try
             {
                 // Mở trình duyệt và điều hướng đến trang web cần đăng nhập
-                driver.Navigate().GoToUrl("http://localhost:8080/QuanLyNhaHang/login"); // Thay thế bằng URL của trang web bạn muốn đăng nhập
+                driver.Navigate().GoToUrl("http://localhost:8080/QuanLyNhaHang/login"); 
 
                 // Tìm và click vào phần tử để mở form đăng nhập (ví dụ: button hoặc link)
-                IWebElement loginButton = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div[2]/form/input")); // Thay thế bằng XPath hoặc CSS Selector của nút đăng nhập
+                IWebElement loginButton = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div[2]/form/input")); 
                 loginButton.Click();
 
                 // Nhập thông tin đăng nhập (ví dụ: tên đăng nhập và mật khẩu)
-                IWebElement usernameField = driver.FindElement(By.Id("email")); // Thay thế bằng id hoặc selector của trường tên đăng nhập
+                IWebElement usernameField = driver.FindElement(By.Id("email")); 
                 usernameField.SendKeys("abcd123@gmail.com");
 
-                IWebElement passwordField = driver.FindElement(By.Id("password")); // Thay thế bằng id hoặc selector của trường mật khẩu
+                IWebElement passwordField = driver.FindElement(By.Id("password"));
                 passwordField.SendKeys("Admin@123");
 
                 //Đóng màn hình đen khi chạy chương trình
@@ -48,7 +48,7 @@ namespace testdemo1
                 chrome.HideCommandPromptWindow = true;
 
                 // Submit form để đăng nhập
-                IWebElement submitButton = driver.FindElement(By.XPath("//input[@type='submit']")); // Thay thế bằng XPath hoặc CSS Selector của nút submit
+                IWebElement submitButton = driver.FindElement(By.XPath("//input[@type='submit']")); 
                 submitButton.Click();
 
                 MessageBox.Show("Chức năng đăng nhập đạt yêu cầu!");
@@ -156,21 +156,21 @@ namespace testdemo1
                 //sanh rose
                 IWebElement roseHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[1]/div/button"));
                 roseHallSelect.Click();
-                ////sanh Camellia
-                //IWebElement camelliaHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[3]/div/button"));
-                //camelliaHallSelect.Click();
-                ////sanh Tulip
-                //IWebElement tulipHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[4]/div/button"));
-                //tulipHallSelect.Click();
-                ////sanh Lotus
-                //IWebElement lotusHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[5]/div/button"));
-                //tulipHallSelect.Click();
-                ////sanh Pense
-                //IWebElement penseHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[6]/div/button"));
-                //penseHallSelect.Click();
-                ////sanh Violet
-                //IWebElement violetHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[7]/div/button"));
-                //violetHallSelect.Click();
+                //sanh Camellia
+                IWebElement camelliaHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[3]/div/button"));
+                camelliaHallSelect.Click();
+                //sanh Tulip
+                IWebElement tulipHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[4]/div/button"));
+                tulipHallSelect.Click();
+                //sanh Lotus
+                IWebElement lotusHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[5]/div/button"));
+                tulipHallSelect.Click();
+                //sanh Pense
+                IWebElement penseHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[6]/div/button"));
+                penseHallSelect.Click();
+                //sanh Violet
+                IWebElement violetHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[7]/div/button"));
+                violetHallSelect.Click();
             }
             catch (Exception ex)
             {
