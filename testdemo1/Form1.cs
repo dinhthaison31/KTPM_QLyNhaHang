@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using OpenQA.Selenium.Support.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace testdemo1
 {
@@ -64,7 +65,6 @@ namespace testdemo1
             }
         }
 
-
         //Test dang ky
         private void btn_TestRegister_Click(object sender, EventArgs e)
         {
@@ -72,7 +72,7 @@ namespace testdemo1
 
             try
             {
-                // Điều hướng đến trang đăng ký nhân viên của trang web
+                // Điều hướng đến trang đăng ký người dùng của trang web
                 driver.Navigate().GoToUrl("http://localhost:8080/QuanLyNhaHang/register"); // Thay thế bằng URL của trang đăng ký nhân viên
 
                 // Điền thông tin đăng ký
@@ -103,7 +103,7 @@ namespace testdemo1
                 IWebElement registerButton = driver.FindElement(By.XPath("//*[@id=\"user\"]/input"));
                 registerButton.Click();
 
-                MessageBox.Show("Đăng ký nhân viên thành công!");
+                MessageBox.Show("Đăng ký người dùng thành công!");
             }
             catch (Exception ex)
             {
@@ -220,13 +220,56 @@ namespace testdemo1
                 //sanh rose
                 IWebElement roseHallSelect = driver.FindElement(By.XPath("//*[@id=\"exampleModal\"]/div/div/div[2]/div[1]/div/button"));
                 roseHallSelect.Click();
+                
+                // Chọn món bất kì, thay đổi tên biến, đường dẫn xpath, số lần click trong vòng lặp sau đó copy paste
+                // Viết thêm nếu muốn chọn thêm những món khác
+                IWebElement randomDishes = driver.FindElement(By.XPath(""));
+                for (int i = 0; i < 5; i++)
+                {
+                    randomDishes.Click();
+                }
 
+                // VD: Chọn món cá gì đó
+                IWebElement fishDishes = driver.FindElement(By.XPath(""));
+                for (int i = 0; i < 3; i++)
+                {
+                    fishDishes.Click();
+                }
 
+                // ...
+
+                // Nhấn nút tiếp tục để tiến hành thanh toán
+                IWebElement continueButton = driver.FindElement(By.XPath(""));
+                continueButton.Click();
+
+                // Tiến hành thanh toán chọn 1 trong 2 options dưới đây để chạy
+                // Thanh toán bằng MOMO
+                IWebElement momoPayment = driver.FindElement(By.XPath(""));
+                if (!momoPayment.Selected)
+                {
+                    momoPayment.Click();
+                }
+                //Thanh toán bằng tiền mặt
+                //IWebElement cashPayment = driver.FindElement(By.XPath(""));
+                //if (!cashPayment.Selected)
+                //{
+                //    cashPayment.Click();
+                //}
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
+        }
+
+        private void btn_TestService_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TestProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
