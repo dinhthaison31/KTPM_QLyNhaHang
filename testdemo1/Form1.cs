@@ -40,7 +40,7 @@ namespace testdemo1
 
                 // Nhập thông tin đăng nhập (ví dụ: tên đăng nhập và mật khẩu)
                 IWebElement usernameField = driver.FindElement(By.Id("email"));
-                usernameField.SendKeys("abcd123@gmail.com");
+                usernameField.SendKeys("addmin123@gmail.com");
 
                 IWebElement passwordField = driver.FindElement(By.Id("password"));
                 passwordField.SendKeys("Admin@123");
@@ -76,14 +76,15 @@ namespace testdemo1
                 // Điều hướng đến trang đăng ký người dùng của trang web
                 driver.Navigate().GoToUrl("http://localhost:8080/QuanLyNhaHang/register"); // Thay thế bằng URL của trang đăng ký nhân viên
 
+                // Test case 1  
                 // Điền thông tin đăng ký
-                driver.FindElement(By.Id("email")).SendKeys("aaa123@gmail.com");
-                driver.FindElement(By.Id("name")).SendKeys("manhcuong1");
+                driver.FindElement(By.Id("email")).SendKeys("addmin123@gmail.com");
+                driver.FindElement(By.Id("name")).SendKeys("manhcuonga3");
                 driver.FindElement(By.Id("phone")).SendKeys("0923226323");
                 // Tìm trường nhập ngày sinh
                 IWebElement birthDayInput = driver.FindElement(By.Id("birth-day"));
                 // Sử dụng JavaScript để thiết lập giá trị cho trường ngày
-                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].value = arguments[1];", birthDayInput, "2000-09-19");
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].value = arguments[1];", birthDayInput, "2005-09-19");
 
                 //  driver.FindElement(By.Id("birth-day")).SendKeys("20-Oct-2001");
 
@@ -293,11 +294,11 @@ namespace testdemo1
                 //Tên
                 IWebElement renameField = driver.FindElement(By.Id("name"));
                 renameField.Clear();
-                renameField.SendKeys("thai son");
+                renameField.SendKeys("thai son test 1");
                 // Số điện thoại
                 IWebElement phoneField = driver.FindElement(By.XPath("//*[@id=\"mobile\"]"));
                 phoneField.Clear();
-                phoneField.SendKeys("");
+                phoneField.SendKeys("0908070605");
               
                 // Tìm trường nhập ngày sinh
                IWebElement birthdayDate = driver.FindElement(By.Id("birthday"));
